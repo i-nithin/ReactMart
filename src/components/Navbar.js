@@ -4,7 +4,15 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
-  const state = useSelector(state => state.handleCart)
+   const cart = useSelector(state => state.cart.cart)
+
+   const getTotalQuantity = () => {
+    let total = 0
+    cart.forEach(item => {
+      total += item.quantity
+    })
+    return total
+  }
 
   return (
     <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
@@ -42,7 +50,7 @@ const Navbar = () => {
           <div className="buttons">
             <NavLink to="/login" className="btn btn-outline-dark">Login <i className="fa fa-sign-in me-1"></i></NavLink>
             <NavLink to="/register" className="btn btn-outline-dark ms-2">Register <i className="fa fa-user-plus me-2"></i></NavLink>
-            <NavLink to="/cart" className="btn btn-outline-dark ms-2">Cart () <i className="fa fa-shopping-cart me-1"></i></NavLink>
+            <NavLink to="/cart" className="btn btn-outline-dark ms-2">Cart({getTotalQuantity() || 0}) <i className="fa fa-shopping-cart me-1"></i></NavLink>
           </div>
         </div>
       </div>
