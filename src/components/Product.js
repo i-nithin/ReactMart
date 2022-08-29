@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import Loading from './Loading'
 import ShowProduct from './ShowProduct'
-import ShowProducts from './ShowProducts'
+
 
 
 const Product = () => {

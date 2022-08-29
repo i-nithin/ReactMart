@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { BounceLoader, DotLoader, PacmanLoader } from 'react-spinners'
 import Loading from './Loading'
 import ShowProducts from './ShowProducts'
 
